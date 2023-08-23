@@ -25,13 +25,14 @@
     devShells = genSystems (
       system: {
         default = pkgsFor.${system}.mkShell {
-          buildInputs = with pkgsFor.${system}; [
+          nativeBuildInputs = with pkgsFor.${system}; [
             flutter
             # I think these are already included, should check later:
 
             clang
             cmake
             gtk2
+            graphite2
             gtk3
             ninja
             pkg-config
